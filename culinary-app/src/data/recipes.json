@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"name": "Spaghetti Bolognese",
+		"isFavorite": false
+	},
+	{
+		"id": 2,
+		"name": "Pancakes",
+		"isFavorite": true
+	},
+	{
+		"id": 3,
+		"name": "Caesar Salad",
+		"isFavorite": false
+	}
+]
