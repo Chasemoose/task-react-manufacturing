@@ -12,4 +12,9 @@ export const addRecipe = recipe => ({
     type: 'TOGGLE_FAVORITE',
     payload: id,
   });
+
+  export const updateRecipe = recipe => ({
+    type: 'UPDATE_RECIPE',
+    payload: recipe,
+  })
   
