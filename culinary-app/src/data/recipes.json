@@ -1,17 +1,50 @@
 [
 	{
-		"id": 1,
-		"name": "Spaghetti Bolognese",
-		"isFavorite": false
+	  "id": 1,
+	  "name": "Spaghetti Carbonara",
+	  "ingredients": [
+		"200g spaghetti",
+		"100g pancetta",
+		"2 large eggs",
+		"50g grated Parmesan",
+		"2 cloves garlic",
+		"Salt and pepper"
+	  ],
+	  "instructions": "Cook the spaghetti. In a separate pan, fry the pancetta with garlic. Beat the eggs with Parmesan. Mix everything together with the spaghetti, seasoning with salt and pepper.",
+	  "isFavorite": false
 	},
 	{
-		"id": 2,
-		"name": "Pancakes",
-		"isFavorite": true
+	  "id": 2,
+	  "name": "Classic Pancakes",
+	  "ingredients": [
+		"200g all-purpose flour",
+		"2 large eggs",
+		"300ml milk",
+		"1 tbsp sugar",
+		"1 tsp baking powder",
+		"Pinch of salt",
+		"Butter for frying"
+	  ],
+	  "instructions": "Mix the flour, baking powder, and salt. In another bowl, whisk the eggs and milk, then combine with the dry ingredients. Fry portions of the batter in butter until golden brown.",
+	  "isFavorite": false
 	},
 	{
-		"id": 3,
-		"name": "Caesar Salad",
-		"isFavorite": false
+	  "id": 3,
+	  "name": "Caesar Salad",
+	  "ingredients": [
+		"1 romaine lettuce",
+		"50g grated Parmesan",
+		"Croutons",
+		"1 clove garlic",
+		"2 anchovies",
+		"1 egg yolk",
+		"2 tbsp olive oil",
+		"1 tsp Dijon mustard",
+		"1 tsp Worcestershire sauce",
+		"Juice of 1 lemon"
+	  ],
+	  "instructions": "Blend garlic, anchovies, egg yolk, mustard, Worcestershire sauce, and lemon juice. Slowly add olive oil while blending. Toss with lettuce, Parmesan, and croutons.",
+	  "isFavorite": false
 	}
-]
+  ]
+  
