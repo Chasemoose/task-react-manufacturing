@@ -8,7 +8,7 @@ import SearchRecipesPage from "./pages/SearchRecipesPage";
 import RecipeItemPage from "./pages/RecipeItemPage"; // Importujemy nową stronę
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
-import "./App.css";
+import "./styles/App.css";
 import data from "./data/recipes.json";
 
 function App() {
