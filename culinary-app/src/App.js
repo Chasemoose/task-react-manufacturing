@@ -14,8 +14,10 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setRecipes(data));
+	dispatch(setRecipes(data));
+	console.log("Załadowane dane z recipes.json:", data);
   }, [dispatch]);
+  
 
   return (
 		<Router>

@@ -18,9 +18,12 @@ export const updateRecipe = recipe => ({
 	payload: recipe,
 })
 
-export const setRecipes = recipes => ({
-	type: "SET_RECIPES",
-	payload: recipes,
-})
+export const setRecipes = (recipes) => {
+	console.log("Akcja setRecipes z danymi:", recipes);
+	return {
+		type: "SET_RECIPES",
+		payload: recipes,
+	}
+}
 
   

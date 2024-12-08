@@ -6,30 +6,49 @@ const SearchRecipes = () => {
   const [ingredientsSearch, setIngredientsSearch] = useState("");
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-  const recipes = useSelector((state) => state.recipes.recipes);
+
+  const recipes = useSelector((state) => state.recipes.recipes); 
+  console.log("Wszystkie przepisy z Redux:", recipes);
 
   const handleSearch = () => {
     const filtered = Array.isArray(recipes)
       ? recipes.filter((recipe) => {
-          const titleMatches = recipe.name
-            .toLowerCase()
-            .includes(titleSearch.toLowerCase());
-
-          const ingredientsMatches = ingredientsSearch
+      
+          const titleMatches = titleSearch
+            ? recipe.name.toLowerCase().includes(titleSearch.toLowerCase()) 
+            : true;
+  
+          const searchIngredients = ingredientsSearch
             .split(",")
-            .map((ing) => ing.trim().toLowerCase())
-            .every((searchIng) =>
-              recipe.ingredients.some((ingredient) =>
-                ingredient.toLowerCase().includes(searchIng)
-              )
-            );
-          return titleMatches || ingredientsMatches;
+            .map((ing) => ing.trim().toLowerCase());
+  
+          const ingredientsMatches = searchIngredients.every((searchIng) =>
+            recipe.ingredients.some((ingredient) =>
+              ingredient.toLowerCase().includes(searchIng)
+            )
+          );
+  
+        
+          if (ingredientsSearch && titleSearch) {
+            return titleMatches && ingredientsMatches;
+          } else if (ingredientsSearch) {
+            return ingredientsMatches;
+          } else if (titleSearch) {
+            return titleMatches;
+          } else {
+            return true;
+          }
         })
       : [];
-
+  
+    console.log("Przepisy po filtrowaniu:", filtered);
     setFilteredRecipes(filtered);
-  };
 
+    setTitleSearch("");
+    setIngredientsSearch("");
+  };
+    
+  
   return (
     <div>
       <h2>Wyszukaj przepisy</h2>
