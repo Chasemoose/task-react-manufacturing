@@ -4,7 +4,7 @@ import { setRecipes } from "./redux/actions/recipeActions";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
-import SearchRecipes from "./pages/SearchRecipesPage";
+import SearchRecipesPage from "./pages/SearchRecipesPage";
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
 import "./App.css";
@@ -39,7 +39,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<HomePage />} />
 					<Route path='/add' element={<AddRecipePage />} />
-					<Route path='/search' element={<SearchRecipes />} />
+					<Route path='/search' element={<SearchRecipesPage />} />
           <Route path='/favorites' element={<FavoriteRecipesPage />} />
 				</Routes>
 			</ErrorBoundary>
