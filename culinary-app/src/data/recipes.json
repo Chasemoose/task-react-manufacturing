@@ -5,45 +5,145 @@
 	  "ingredients": [
 		"200g spaghetti",
 		"100g pancetta",
-		"2 large eggs",
-		"50g grated Parmesan",
-		"2 cloves garlic",
-		"Salt and pepper"
+		"2 duże jajka",
+		"50g startego parmezanu",
+		"2 ząbki czosnku",
+		"Sól i pieprz"
 	  ],
-	  "instructions": "Cook the spaghetti. In a separate pan, fry the pancetta with garlic. Beat the eggs with Parmesan. Mix everything together with the spaghetti, seasoning with salt and pepper.",
+	  "instructions": "Ugotuj spaghetti. Na osobnej patelni podsmaż pancettę z czosnkiem. Roztrzep jajka z parmezanem. Wszystko wymieszaj z ugotowanym spaghetti, dopraw solą i pieprzem.",
 	  "isFavorite": false
 	},
 	{
 	  "id": 2,
-	  "name": "Classic Pancakes",
+	  "name": "Klasyczne naleśniki",
 	  "ingredients": [
-		"200g all-purpose flour",
-		"2 large eggs",
-		"300ml milk",
-		"1 tbsp sugar",
-		"1 tsp baking powder",
-		"Pinch of salt",
-		"Butter for frying"
+		"200g mąki pszennej",
+		"2 duże jajka",
+		"300ml mleka",
+		"1 łyżka cukru",
+		"1 łyżeczka proszku do pieczenia",
+		"Szczypta soli",
+		"Masło do smażenia"
 	  ],
-	  "instructions": "Mix the flour, baking powder, and salt. In another bowl, whisk the eggs and milk, then combine with the dry ingredients. Fry portions of the batter in butter until golden brown.",
+	  "instructions": "Wymieszaj mąkę, proszek do pieczenia i sól. W osobnej misce roztrzep jajka z mlekiem, a następnie połącz z suchymi składnikami. Smaż porcje ciasta na rozgrzanym maśle, aż naleśniki będą złociste.",
 	  "isFavorite": false
 	},
 	{
 	  "id": 3,
-	  "name": "Caesar Salad",
+	  "name": "Sałatka Cezar",
 	  "ingredients": [
-		"1 romaine lettuce",
-		"50g grated Parmesan",
-		"Croutons",
-		"1 clove garlic",
-		"2 anchovies",
-		"1 egg yolk",
-		"2 tbsp olive oil",
-		"1 tsp Dijon mustard",
-		"1 tsp Worcestershire sauce",
-		"Juice of 1 lemon"
+		"1 sałata rzymska",
+		"50g startego parmezanu",
+		"Grzanki",
+		"1 ząbek czosnku",
+		"2 anchois",
+		"1 żółtko",
+		"2 łyżki oliwy z oliwek",
+		"1 łyżeczka musztardy Dijon",
+		"1 łyżeczka sosu Worcestershire",
+		"Sok z 1 cytryny"
 	  ],
-	  "instructions": "Blend garlic, anchovies, egg yolk, mustard, Worcestershire sauce, and lemon juice. Slowly add olive oil while blending. Toss with lettuce, Parmesan, and croutons.",
+	  "instructions": "Zblenduj czosnek, anchois, żółtko, musztardę, sos Worcestershire i sok z cytryny. Powoli dodawaj oliwę podczas miksowania. Wymieszaj z sałatą, parmezanem i grzankami.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 4,
+	  "name": "Zupa pomidorowa",
+	  "ingredients": [
+		"500g pomidorów",
+		"1 cebula",
+		"2 ząbki czosnku",
+		"500ml bulionu warzywnego",
+		"1 łyżka oliwy z oliwek",
+		"Sól i pieprz",
+		"Świeża bazylia"
+	  ],
+	  "instructions": "Podsmaż cebulę i czosnek na oliwie. Dodaj pomidory i bulion, gotuj przez 20 minut. Zblenduj na gładko i dopraw solą, pieprzem oraz bazylią.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 5,
+	  "name": "Kurczak w sosie curry",
+	  "ingredients": [
+		"500g piersi z kurczaka",
+		"1 cebula",
+		"2 ząbki czosnku",
+		"1 łyżka pasty curry",
+		"200ml mleka kokosowego",
+		"1 łyżka oleju",
+		"Sól i pieprz"
+	  ],
+	  "instructions": "Podsmaż cebulę i czosnek na oleju. Dodaj pokrojonego kurczaka i pastę curry. Smaż, aż kurczak będzie złocisty, a następnie dodaj mleko kokosowe. Gotuj, aż sos zgęstnieje. Dopraw solą i pieprzem.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 6,
+	  "name": "Placki ziemniaczane",
+	  "ingredients": [
+		"500g ziemniaków",
+		"1 jajko",
+		"2 łyżki mąki",
+		"Sól i pieprz",
+		"Olej do smażenia"
+	  ],
+	  "instructions": "Zetrzyj ziemniaki na tarce, odciśnij nadmiar wody. Wymieszaj z jajkiem, mąką, solą i pieprzem. Smaż na rozgrzanym oleju z obu stron, aż będą złociste.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 7,
+	  "name": "Lasagne",
+	  "ingredients": [
+		"500g mielonej wołowiny",
+		"1 cebula",
+		"2 ząbki czosnku",
+		"400g pomidorów z puszki",
+		"200g sera mozzarella",
+		"Płaty makaronu do lasagne",
+		"Sól, pieprz, oregano"
+	  ],
+	  "instructions": "Podsmaż cebulę i czosnek, dodaj mięso i smaż do zarumienienia. Dodaj pomidory, sól, pieprz i oregano, gotuj przez 20 minut. Układaj warstwy makaronu, mięsa i sera, piecz w 180°C przez 40 minut.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 8,
+	  "name": "Krem z dyni",
+	  "ingredients": [
+		"1 kg dyni",
+		"1 cebula",
+		"2 ząbki czosnku",
+		"500ml bulionu warzywnego",
+		"200ml śmietanki",
+		"1 łyżka oliwy z oliwek",
+		"Sól, pieprz, gałka muszkatołowa"
+	  ],
+	  "instructions": "Podsmaż cebulę i czosnek na oliwie. Dodaj dynię i bulion, gotuj do miękkości. Zblenduj na gładko, dodaj śmietankę, dopraw solą, pieprzem i gałką muszkatołową.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 9,
+	  "name": "Omlet z warzywami",
+	  "ingredients": [
+		"3 jajka",
+		"1 pomidor",
+		"1 papryka",
+		"Garść szpinaku",
+		"Sól i pieprz",
+		"1 łyżka oliwy"
+	  ],
+	  "instructions": "Na rozgrzanej oliwie podsmaż warzywa. W osobnej misce roztrzep jajka, dodaj sól i pieprz. Wlej jajka na patelnię, smaż, aż omlet będzie gotowy.",
+	  "isFavorite": false
+	},
+	{
+	  "id": 10,
+	  "name": "Tarta cytrynowa",
+	  "ingredients": [
+		"200g mąki",
+		"100g masła",
+		"2 jajka",
+		"100g cukru",
+		"Sok i skórka z 2 cytryn"
+	  ],
+	  "instructions": "Wymieszaj mąkę i masło, dodaj jedno jajko, wyrób ciasto i schłódź. W osobnej misce wymieszaj cukier, sok i skórkę z cytryn, oraz jajko. Piecz ciasto w 180°C przez 15 minut, dodaj masę cytrynową i piecz kolejne 20 minut.",
 	  "isFavorite": false
 	}
   ]

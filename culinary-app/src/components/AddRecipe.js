@@ -63,7 +63,7 @@ const AddRecipe = () => {
           />
         </label>
       </div>
-      <button onClick={handleAdd}>Add Recipe</button>
+      <button onClick={handleAdd}>Dodaj przepis</button>
     </div>
 	);
 };
