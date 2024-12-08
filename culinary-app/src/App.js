@@ -4,7 +4,7 @@ import { setRecipes } from "./redux/actions/recipeActions";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
-import SearchRecipes from "./pages/SearchRecipes";
+import SearchRecipes from "./pages/SearchRecipesPage";
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
 import "./App.css";

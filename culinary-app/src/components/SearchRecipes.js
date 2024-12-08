@@ -6,7 +6,7 @@ const SearchRecipes = () => {
   const [ingredientsSearch, setIngredientsSearch] = useState("");
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-  const recipes = useSelector((state) => state.recipes);
+  const recipes = useSelector((state) => state.recipes.recipes);
 
   const handleSearch = () => {
     const filtered = Array.isArray(recipes)
