@@ -1,6 +1,6 @@
 const initialState = {
-	recipes: [],
-	favorites: [],
+	recipes: [], 
+	favorites: JSON.parse(localStorage.getItem('favoriteRecipes')) || [], 
 };
 
 export const recipesReducer = (state = initialState, action) => {
@@ -11,20 +11,30 @@ export const recipesReducer = (state = initialState, action) => {
 				recipes: [...state.recipes, action.payload],
 			};
 		case "REMOVE_RECIPE":
+			const updatedRecipesAfterRemoval = state.recipes.filter(recipe => recipe.id !== action.payload);
+			const updatedFavoritesAfterRemoval = state.favorites.filter(recipe => recipe.id !== action.payload);
+			localStorage.setItem('favoriteRecipes', JSON.stringify(updatedFavoritesAfterRemoval));
 			return {
 				...state,
-				recipes: state.recipes.filter(recipe => recipe.id !== action.payload),
+				recipes: updatedRecipesAfterRemoval,
+				favorites: updatedFavoritesAfterRemoval,
 			};
 		case "TOGGLE_FAVORITE":
-			const updateRecipes = state.recipes.map(recipe =>
+			const updatedRecipes = state.recipes.map(recipe =>
 				recipe.id === action.payload
 					? { ...recipe, isFavorite: !recipe.isFavorite }
 					: recipe
 			);
+
+			
+			const updatedFavorites = updatedRecipes.filter(recipe => recipe.isFavorite);
+			
+			localStorage.setItem('favoriteRecipes', JSON.stringify(updatedFavorites));
+
 			return {
 				...state,
-				recipes: updateRecipes,
-				favorites: updateRecipes.filter(recipe => recipe.isFavorite),
+				recipes: updatedRecipes,
+				favorites: updatedFavorites,
 			};
 
 		case "UPDATE_RECIPE":
