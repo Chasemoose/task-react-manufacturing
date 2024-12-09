@@ -30,8 +30,8 @@ const AddRecipe = () => {
 
     return (
         <div className="add-recipe-container">
-            <h3 className="add-recipe-title">Dodaj nowy przepis</h3>
-            <div className="add-recipe-field">
+            {/* <h3 className="add-recipe-header">Dodaj nowy przepis</h3> */}
+            <div className="add-recipe-form">
                 <label className="add-recipe-label">
                     Nazwa przepisu:
                     <input
@@ -42,10 +42,8 @@ const AddRecipe = () => {
                         className="add-recipe-input"
                     />
                 </label>
-            </div>
-            <div className="add-recipe-field">
                 <label className="add-recipe-label">
-                    Składniki: (przedzielone przecinkiem):
+                    Składniki (oddzielone przecinkiem):
                     <input
                         type="text"
                         placeholder="Np. pomidory, ziemniaki, makaron"
@@ -54,8 +52,6 @@ const AddRecipe = () => {
                         className="add-recipe-input"
                     />
                 </label>
-            </div>
-            <div className="add-recipe-field">
                 <label className="add-recipe-label">
                     Opis przygotowania:
                     <textarea
@@ -65,12 +61,13 @@ const AddRecipe = () => {
                         className="add-recipe-textarea"
                     />
                 </label>
+                <button className="add-recipe-button" onClick={handleAdd}>
+                    Dodaj przepis
+                </button>
             </div>
-            <button className="add-recipe-button" onClick={handleAdd}>
-                Dodaj przepis
-            </button>
         </div>
     );
+    
 };
 
 export default AddRecipe;

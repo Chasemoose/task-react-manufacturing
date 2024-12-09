@@ -1,7 +1,8 @@
 .add-recipe-page {
+    position: relative;
     min-height: 100vh;
     width: 100%;
-    /* background-image: url('../images/img_12.jpg'); */
+    background-image: url('../images/img_2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,13 +11,23 @@
     align-items: center;
     justify-content: flex-start;
     padding: 40px 20px;
-    z-index: -1;
+}
+
+.add-recipe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 0;
 }
 
 .add-recipe-page-title {
-    font-size: 32px;
+    margin-top: 150px;
+    font-size: 3.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
     color: #fff;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
