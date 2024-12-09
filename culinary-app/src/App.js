@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
 import SearchRecipesPage from "./pages/SearchRecipesPage";
-import RecipeItemPage from "./pages/RecipeItemPage"; // Importujemy nową stronę
+import RecipeItemPage from "./pages/RecipeItemPage"; 
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
 import "./styles/App.css";
