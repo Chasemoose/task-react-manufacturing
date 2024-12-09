@@ -1,0 +1,25 @@
+.recipe-item-page-container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/default-recipe-bg.jpg'); /* Podmień ścieżkę */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .recipe-item-page-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .recipe-item-page-ingredients,
+  .recipe-item-page-instructions {
+    font-size: 18px;
+    color: #eee;
+    margin: 10px 0;
+  }
+  

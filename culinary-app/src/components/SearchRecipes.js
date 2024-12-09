@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import '../styles/SearchRecipes.css'
 
 const SearchRecipes = () => {
   const [titleSearch, setTitleSearch] = useState("");
@@ -47,45 +48,47 @@ const SearchRecipes = () => {
   };
 
   return (
-    <div>
-      <h2>Wyszukaj przepisy</h2>
-      <div>
-        <label>
+    <div className="search-recipes-container">
+      <h2 className="search-recipes-header">Wyszukaj przepisy</h2>
+      <div className="search-recipes-inputs">
+        <label className="search-recipes-label">
           Wyszukaj po tytule:
           <input
             type="text"
             value={titleSearch}
             onChange={(e) => setTitleSearch(e.target.value)}
             placeholder="Wpisz tytuł przepisu"
+            className="search-recipes-input"
           />
         </label>
-      </div>
-      <div>
-        <label>
+        <label className="search-recipes-label">
           Wyszukaj po składnikach (przecinki):
           <input
             type="text"
             value={ingredientsSearch}
             onChange={(e) => setIngredientsSearch(e.target.value)}
             placeholder="Np. pomidory, cebula"
+            className="search-recipes-input"
           />
         </label>
       </div>
-      <button onClick={handleSearch}>Wyszukaj</button>
-      <div>
-        <h3>Wyniki wyszukiwania:</h3>
-        <ul>
+      <button onClick={handleSearch} className="search-recipes-button">Wyszukaj</button>
+      <div className="search-recipes-results">
+        <h3 className="search-recipes-results-header">Wyniki wyszukiwania:</h3>
+        <ul className="search-recipes-results-list">
           {filteredRecipes.length > 0 ? (
             filteredRecipes.map((recipe) => (
-              <li key={recipe.id}>
-                <Link to={`/recipe/${recipe.id}`}>
-                  <h4>{recipe.name}</h4>
+              <li key={recipe.id} className="search-recipes-results-item">
+                <Link to={`/recipe/${recipe.id}`} className="search-recipes-results-link">
+                  <h4 className="search-recipes-results-title">{recipe.name}</h4>
                 </Link>
-                <p>Składniki: {recipe.ingredients.join(", ")}</p>
+                <p className="search-recipes-results-ingredients">
+                  Składniki: {recipe.ingredients.join(", ")}
+                </p>
               </li>
             ))
           ) : (
-            <p>Brak wyników.</p>
+            <p className="search-recipes-no-results">Brak wyników.</p>
           )}
         </ul>
       </div>

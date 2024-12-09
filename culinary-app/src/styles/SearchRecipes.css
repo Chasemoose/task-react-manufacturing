@@ -1,0 +1,84 @@
+.search-recipes-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .search-recipes-header {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-recipes-inputs {
+    margin-bottom: 20px;
+  }
+  
+  .search-recipes-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .search-recipes-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-recipes-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .search-recipes-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-recipes-results {
+    margin-top: 20px;
+  }
+  
+  .search-recipes-results-header {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .search-recipes-results-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .search-recipes-results-item {
+    margin-bottom: 15px;
+  }
+  
+  .search-recipes-results-link {
+    text-decoration: none;
+    color: #007BFF;
+  }
+  
+  .search-recipes-results-title {
+    font-size: 20px;
+  }
+  
+  .search-recipes-results-ingredients {
+    font-size: 16px;
+  }
+  
+  .search-recipes-no-results {
+    font-size: 18px;
+    color: #555;
+  }
+  
