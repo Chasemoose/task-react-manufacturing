@@ -22,16 +22,16 @@ function App() {
   return (
     <Router>
       <ErrorBoundary>
-        <nav>
+        <nav className="nav-bar">
           <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/add">Add Recipe</Link>
+              <Link to="/add">Dodaj przepis</Link>
             </li>
             <li>
-              <Link to="/search">Search Recipes</Link>
+              <Link to="/search">Wyszukaj przepis</Link>
             </li>
             <li>
               <Link to="/favorites">Ulubione Przepisy</Link>

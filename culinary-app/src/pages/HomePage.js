@@ -1,10 +1,12 @@
 import React from "react";
-import '../styles/HomePage.css'
+import '../styles/HomePage.css';
 
 const HomePage = () => {
     return (
         <div className="homepage-container">
-            <h2 className="homepage-header">Welcome to Przepisbook!</h2>
+            <div className="overlay"></div>
+            <h2 className="homepage-header">Witaj w Przepisbook!</h2>
+            <p className="homepage-para">"...gdzie przepisy rządzą, a kuchnia nigdy nie zasypia!"</p>
         </div>
     );
 };
