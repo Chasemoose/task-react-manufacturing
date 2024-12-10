@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import '../styles/SearchRecipes.css'
+import { addSearchHistory } from "../redux/actions/recipeActions"; // Import akcji
+import '../styles/SearchRecipes.css';
 
 const SearchRecipes = () => {
   const [titleSearch, setTitleSearch] = useState("");
@@ -9,6 +10,8 @@ const SearchRecipes = () => {
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   const recipes = useSelector((state) => state.recipes.recipes);
+  const dispatch = useDispatch(); 
+
   console.log("Wszystkie przepisy z Redux:", recipes);
 
   const handleSearch = () => {
@@ -43,6 +46,12 @@ const SearchRecipes = () => {
     console.log("Przepisy po filtrowaniu:", filtered);
     setFilteredRecipes(filtered);
 
+    
+    if (titleSearch || ingredientsSearch) {
+      dispatch(addSearchHistory({ titleSearch, ingredientsSearch }));
+    }
+
+    
     setTitleSearch("");
     setIngredientsSearch("");
   };

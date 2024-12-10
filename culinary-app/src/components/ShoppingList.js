@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItemFromShoppingList, clearShoppingList } from "../redux/actions/shoppingListActions";
+import { removeItemFromShoppingList, clearShoppingList } from "../redux/actions/recipeActions";
 import "../styles/ShoppingList.css";
 
 const ShoppingList = () => {
