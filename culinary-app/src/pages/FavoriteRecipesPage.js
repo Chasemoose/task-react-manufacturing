@@ -8,12 +8,15 @@ const FavoriteRecipesPage = () => {
 
   return (
     <div className="favorite-recipes-container">
-      <h2 className="favorite-recipes-header">Ulubione Przepisy</h2>
-      {favoriteRecipes.length > 0 ? (
-        <RecipeList recipes={favoriteRecipes} />
-      ) : (
-        <p className="favorite-recipes-empty-message">Nie masz jeszcze ulubionych przepisów.</p>
-      )}
+      <div className="favorite-recipes-overlay"></div>
+      <div className="favorite-recipes-content">
+        <h2 className="favorite-recipes-header">Ulubione Przepisy</h2>
+        {favoriteRecipes.length > 0 ? (
+          <RecipeList recipes={favoriteRecipes} />
+        ) : (
+          <p className="favorite-recipes-empty-message">Nie masz jeszcze ulubionych przepisów.</p>
+        )}
+      </div>
     </div>
   );
 };
