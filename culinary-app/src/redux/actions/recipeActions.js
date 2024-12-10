@@ -26,6 +26,15 @@ export const setRecipes = (recipes) => {
     };
 };
 
+export const addSearchHistory = (query) => ({
+    type: "ADD_SEARCH_HISTORY",
+    payload: query,
+});
+
+export const clearSearchHistory = () => ({
+    type: "CLEAR_SEARCH_HISTORY",
+});
+
 // Dla shoppingList
 export const ADD_TO_SHOPPING_LIST = "ADD_TO_SHOPPING_LIST";
 export const REMOVE_FROM_SHOPPING_LIST = "REMOVE_FROM_SHOPPING_LIST";
