@@ -38,7 +38,7 @@ function App() {
               <Link to="/favorites">Ulubione Przepisy</Link>
             </li>
             <li>
-              <Link to="/shopping-list">Lista Zakupów</Link> {/* Nowy link do listy zakupów */}
+              <Link to="/shopping-list">Lista Zakupów</Link>
             </li>
           </ul>
         </nav>
