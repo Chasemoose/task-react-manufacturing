@@ -8,6 +8,7 @@ import SearchRecipesPage from "./pages/SearchRecipesPage";
 import RecipeItemPage from "./pages/RecipeItemPage"; 
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
+import ShoppingList from "./components/ShoppingList"; 
 import "./styles/App.css";
 import data from "./data/recipes.json";
 
@@ -36,6 +37,9 @@ function App() {
             <li>
               <Link to="/favorites">Ulubione Przepisy</Link>
             </li>
+            <li>
+              <Link to="/shopping-list">Lista Zakupów</Link> {/* Nowy link do listy zakupów */}
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -44,6 +48,7 @@ function App() {
           <Route path="/search" element={<SearchRecipesPage />} />
           <Route path="/recipe/:id" element={<RecipeItemPage />} />
           <Route path="/favorites" element={<FavoriteRecipesPage />} />
+          <Route path="/shopping-list" element={<ShoppingList />} />
         </Routes>
       </ErrorBoundary>
     </Router>

@@ -1,0 +1,81 @@
+.shopping-list-container {
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    max-width: 400px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.shopping-list-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.shopping-list-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shopping-list-item {
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.shopping-list-item:last-child {
+    border-bottom: none;
+}
+
+.shopping-list-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.shopping-list-close:hover {
+    color: #007bff;
+}
+
+.shopping-list-empty {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-top: 20px;
+}
+
+.shopping-list-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.shopping-list-button:hover {
+    background-color: #0056b3;
+}
