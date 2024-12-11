@@ -6,6 +6,7 @@ const ShoppingListPage = () => {
   return (
     <div className="shopping-list-page-container">
       <div className="overlay"></div>
+      <h2 className="shoppingList-page-title">Lista zakupów</h2>
       <ShoppingList />
     </div>
   );
