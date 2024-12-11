@@ -1,0 +1,35 @@
+.shopping-list-page-container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/img_20.jpg'); /* Placeholder background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* For overlay positioning */
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Shadow effect */
+    z-index: 1; /* Ensure it is above the background but below content */
+}
+
+.shopping-list-container {
+    position: relative; /* Ensure it stays above the overlay */
+    z-index: 2; /* Above the overlay */
+    max-width: 600px;
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Ensure centering within the flexbox */
+}

@@ -4,7 +4,7 @@ import { removeItemFromShoppingList, clearShoppingList } from "../redux/actions/
 import "../styles/ShoppingList.css";
 
 const ShoppingList = () => {
-    const shoppingList = useSelector((state) => state.shoppingList.items);
+    const shoppingList = useSelector((state) => state.shoppingList?.items || []); 
     const dispatch = useDispatch();
 
     const handleRemoveItem = (index) => {

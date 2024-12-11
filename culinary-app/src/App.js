@@ -8,7 +8,7 @@ import SearchRecipesPage from "./pages/SearchRecipesPage";
 import RecipeItemPage from "./pages/RecipeItemPage"; 
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
-import ShoppingList from "./components/ShoppingList"; 
+import ShoppingListPage from "./pages/ShoppingListPage"; 
 import "./styles/App.css";
 import data from "./data/recipes.json";
 
@@ -48,7 +48,7 @@ function App() {
           <Route path="/search" element={<SearchRecipesPage />} />
           <Route path="/recipe/:id" element={<RecipeItemPage />} />
           <Route path="/favorites" element={<FavoriteRecipesPage />} />
-          <Route path="/shopping-list" element={<ShoppingList />} />
+          <Route path="/shopping-list" element={<ShoppingListPage />} />
         </Routes>
       </ErrorBoundary>
     </Router>
