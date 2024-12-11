@@ -58,7 +58,7 @@ const SearchRecipes = () => {
 
   return (
     <div className="search-recipes-container">
-      <h2 className="search-recipes-header">Wyszukaj przepisy</h2>
+      {/* <h2 className="search-recipes-header">Wyszukaj przepisy</h2> */}
       <div className="search-recipes-inputs">
         <label className="search-recipes-label">
           Wyszukaj po tytule:
@@ -71,7 +71,7 @@ const SearchRecipes = () => {
           />
         </label>
         <label className="search-recipes-label">
-          Wyszukaj po składnikach (przecinki):
+          Wyszukaj po składnikach (oddzielone przecinkiem):
           <input
             type="text"
             value={ingredientsSearch}

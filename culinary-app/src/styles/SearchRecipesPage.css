@@ -23,7 +23,11 @@
 
 .search-recipes-content {
   /* position: relative; */
-  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
   z-index: 2; 
   /* background-color: rgba(255, 255, 255, 0.9); 
   border-radius: 8px;
@@ -31,4 +35,13 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
   width: 100%;
   max-width: 800px;  */
+}
+
+.search-recipe-page-title {
+    margin-bottom: 150px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
