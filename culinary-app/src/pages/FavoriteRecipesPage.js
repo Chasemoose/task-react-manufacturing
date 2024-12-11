@@ -9,8 +9,9 @@ const FavoriteRecipesPage = () => {
   return (
     <div className="favorite-recipes-container">
       <div className="favorite-recipes-overlay"></div>
+      <h2 className="favorite-recipe-page-title">Ulubione przepisy</h2>
       <div className="favorite-recipes-content">
-        <h2 className="favorite-recipes-header">Ulubione Przepisy</h2>
+        <h2 className="favorite-recipes-header">Lista ulubionych przepisów</h2>
         {favoriteRecipes.length > 0 ? (
           <RecipeList recipes={favoriteRecipes} />
         ) : (

@@ -6,8 +6,10 @@
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    /* padding-top: 150px; */
+    /* justify-content: center; */
+    align-items: center;
     padding: 20px;
     position: relative;
 }
@@ -44,4 +46,14 @@
 .favorite-recipes-empty-message {
     font-size: 18px;
     color: #666;
+}
+
+.favorite-recipe-page-title {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
