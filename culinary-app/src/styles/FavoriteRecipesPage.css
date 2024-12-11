@@ -7,11 +7,10 @@
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    /* padding-top: 150px; */
-    /* justify-content: center; */
     align-items: center;
     padding: 20px;
     position: relative;
+    overflow: hidden;
 }
 
 .favorite-recipes-overlay {

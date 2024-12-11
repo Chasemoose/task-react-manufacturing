@@ -17,6 +17,8 @@
   }
   
   .search-recipes-label {
+    font-weight: bold;
+    color: #333;
     display: block;
     margin-bottom: 10px;
   }
@@ -48,6 +50,10 @@
   
   .search-recipes-results {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .search-recipes-results-header {
