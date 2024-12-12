@@ -1,11 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import RecipeItem from "./RecipeItem";
 import '../styles/RecipeList.css';
 
-const RecipeList = () => {
-  const recipes = useSelector((state) => state.recipes.recipes);
-
+const RecipeList = ({ recipes }) => {  
   if (recipes.length === 0) {
     return <p className="recipe-list-empty-message">Brak dostępnych przepisów. Dodaj jakiś!</p>;
   }
