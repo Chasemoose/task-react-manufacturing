@@ -23,3 +23,22 @@
     margin: 10px 0;
   }
   
+
+  .recipe-item-page-favorite-button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .recipe-item-page-favorite-button.add {
+    background-color: #4CAF50;
+  }
+  
+  .recipe-item-page-favorite-button.remove {
+    background-color: #f44336;
+  }
+  
