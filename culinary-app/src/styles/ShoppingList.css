@@ -1,81 +1,89 @@
 .shopping-list-container {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--background-color, #ffffff);
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
     width: 100%;
-    z-index: 1000;
+    margin: 0 auto;
 }
 
-.shopping-list-header {
-    font-size: 24px;
+.shopping-list-title {
+    font-size: 28px;
     font-weight: bold;
+    color: var(--primary-color, #333333);
     margin-bottom: 20px;
     text-align: center;
-    color: #333;
 }
 
-.shopping-list-items {
+.shopping-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .shopping-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: var(--light-bg-color, #f9f9f9);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+.shopping-list-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-list-item span {
     font-size: 16px;
-    margin: 8px 0;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+    color: var(--text-color, #333333);
 }
 
-.shopping-list-item:last-child {
-    border-bottom: none;
-}
-
-.shopping-list-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
+.shopping-list-remove {
+    background-color: var(--danger-color, #ff4d4f);
+    color: #ffffff;
     border: none;
-    font-size: 18px;
-    font-weight: bold;
+    border-radius: 6px;
+    padding: 5px 10px;
     cursor: pointer;
-    color: #333;
-    transition: color 0.3s ease;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
-.shopping-list-close:hover {
-    color: #007bff;
+.shopping-list-remove:hover {
+    background-color: var(--danger-hover-color, #e03a3c);
 }
 
 .shopping-list-empty {
     text-align: center;
     font-size: 16px;
-    color: #555;
+    color: var(--secondary-text-color, #555555);
     margin-top: 20px;
 }
 
-.shopping-list-button {
-    background-color: #007bff;
-    color: white;
+.shopping-list-clear {
+    background-color: var(--primary-color, #007bff);
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     margin-top: 20px;
-    display: block;
-    width: 100%;
     text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.shopping-list-button:hover {
-    background-color: #0056b3;
+.shopping-list-clear:hover {
+    background-color: var(--primary-hover-color, #0056b3);
 }

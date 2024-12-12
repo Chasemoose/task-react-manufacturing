@@ -9,15 +9,12 @@ import "../styles/ShoppingList.css";
 const ShoppingList = () => {
   const dispatch = useDispatch();
 
-  // Pobierz shoppingList bezpośrednio ze stanu Redux
   const shoppingList = useSelector((state) => state.recipes.shoppingList);
 
-  // Funkcja do usuwania elementu z listy zakupów
-  const handleRemoveItem = (index) => {
+    const handleRemoveItem = (index) => {
     dispatch(removeItemFromShoppingList(index));
   };
 
-  // Funkcja do czyszczenia listy zakupów
   const handleClearList = () => {
     if (window.confirm("Czy na pewno chcesz wyczyścić listę zakupów?")) {
       dispatch(clearShoppingList());
