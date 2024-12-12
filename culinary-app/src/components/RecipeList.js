@@ -9,7 +9,7 @@ const RecipeList = ({ recipes }) => {
 
   return (
     <div className="recipe-list-container">
-      <h2 className="recipe-list-header">Przepisy</h2>
+      {/* <h2 className="recipe-list-header">Przepisy</h2> */}
       <ul className="recipe-list">
         {recipes.map((recipe) => (
           <li key={recipe.id} className="recipe-list-item">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleFavorite, removeRecipe } from "../redux/actions/recipeActions";
 import EditRecipe from "./EditRecipe";
-import '../styles/RecipeItem.css'; // Importujemy plik stylów
+import '../styles/RecipeItem.css'; 
 
 const RecipeItem = ({ recipe }) => {
   const [isEditing, setIsEditing] = useState(false);
