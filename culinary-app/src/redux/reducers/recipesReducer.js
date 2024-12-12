@@ -56,29 +56,29 @@ export const recipesReducer = (state = initialState, action) => {
 		// Dla listy zakupów
 		case "ADD_TO_SHOPPING_LIST":
     		if (action.payload.length === 0) {
-        return state; 
-    	}
-    	return {
-        ...state,
-        shoppingList: [...state.shoppingList, ...action.payload],
-    	};
+        	return state; 
+    		}
+    		return {
+        		...state,
+        		shoppingList: [...state.shoppingList, ...action.payload],
+    		};
 		case "REMOVE_FROM_SHOPPING_LIST":
-    	const updatedShoppingList = state.shoppingList.filter((_, index) => index !== action.payload);
-    	if (updatedShoppingList.length === state.shoppingList.length) {
-        return state; 
-    	}
-    	return {
-        ...state,
-        shoppingList: updatedShoppingList,
-    	};
+    		const updatedShoppingList = state.shoppingList.filter((_, index) => index !== action.payload);
+    		if (updatedShoppingList.length === state.shoppingList.length) {
+        	return state; 
+    		}
+    		return {
+        		...state,
+        		shoppingList: updatedShoppingList,
+    		};
 		case "CLEAR_SHOPPING_LIST":
-    	if (state.shoppingList.length === 0) {
-        return state;
-    	}
-    	return {
-        ...state,
-        shoppingList: [], 
-    	};
+    		if (state.shoppingList.length === 0) {
+        	return state;
+    		}
+    		return {
+        		...state,
+        		shoppingList: [], 
+    		};
 		default:
 			return state;
 	}
