@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggleFavorite, removeRecipe } from "../redux/actions/recipeActions";
+import { toggleFavorite, removeRecipe, addToShoppingList } from "../redux/actions/recipeActions"; 
 import EditRecipe from "./EditRecipe";
 import '../styles/RecipeItem.css'; 
 
 const RecipeItem = ({ recipe }) => {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
+
+
+  const handleAddToShoppingList = () => {
+    dispatch(addToShoppingList(recipe.ingredients));
+  };
 
   return (
     <li className="recipe-item-container">
@@ -43,6 +48,13 @@ const RecipeItem = ({ recipe }) => {
             onClick={() => dispatch(removeRecipe(recipe.id))}
           >
             Usuń
+          </button>
+          
+          <button
+            className="recipe-item-button add-to-shopping-list"
+            onClick={handleAddToShoppingList}
+          >
+            Dodaj składniki do listy zakupów
           </button>
         </>
       )}
