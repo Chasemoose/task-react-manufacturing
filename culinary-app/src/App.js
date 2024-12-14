@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { fetchRecipes } from "./redux/actions/recipeActions"; // Import poprawny
+import React from "react";
+// import { useDispatch } from "react-redux";
+// import { fetchRecipes } from "./redux/actions/recipeActions";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
@@ -12,11 +12,11 @@ import ShoppingListPage from "./pages/ShoppingListPage";
 import "./styles/App.css";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchRecipes()); 
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchRecipes()); 
+  // }, [dispatch]);
 
   return (
     <Router>
