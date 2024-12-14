@@ -25,16 +25,41 @@ const fetchRecipesFailure = (error) => ({
   payload: error,
 });
 
-// Funkcja pobierająca przepisy
+// Funkcja pobierająca szczegóły przepisu
+const fetchRecipeDetails = async (id, apiKey) => {
+  const response = await fetch(
+    `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
+  );
+
+  if (!response.ok) {
+    throw new Error(`Błąd API przy pobieraniu szczegółów przepisu ${id}: ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  console.log(`Szczegóły przepisu ${id}:`, data);
+
+  return {
+    id: data.id,
+    title: data.title || "Brak tytułu",
+    ingredients: data.extendedIngredients
+      ? data.extendedIngredients.map((ingredient) => ingredient.original)
+      : ["Brak składników"],
+    instructions: data.instructions || "Brak instrukcji",
+    isFavorite: false, // Nowa właściwość isFavorite dla każdego przepisu
+  };
+};
+
 // Funkcja pobierająca przepisy
 export const fetchRecipes = (query) => {
   return async (dispatch) => {
     dispatch(fetchRecipesRequest());
 
     try {
-      // Sprawdzanie, czy podano tytuł lub składniki
-      if ((!query || (!query.title && !query.ingredients)) || 
-          (query.title.trim() === "" && query.ingredients.trim() === "")) {
+      if (
+        !query || 
+        (!query.title && !query.ingredients) || 
+        (query.title.trim() === "" && query.ingredients.trim() === "")
+      ) {
         throw new Error("Proszę podać tytuł przepisu lub składniki.");
       }
 
@@ -56,19 +81,24 @@ export const fetchRecipes = (query) => {
       }
 
       const data = await response.json();
-      if (data.results.length === 0) {
+      console.log("Dane zwrócone z API:", data);
+
+      if (!data.results || data.results.length === 0) {
         throw new Error("Brak wyników dla podanych kryteriów.");
       }
 
-      dispatch(fetchRecipesSuccess(data.results));
+      // Pobierz szczegóły każdego przepisu
+      const detailedRecipes = await Promise.all(
+        data.results.map((recipe) => fetchRecipeDetails(recipe.id, apiKey))
+      );
+
+      dispatch(fetchRecipesSuccess(detailedRecipes));
     } catch (error) {
       console.error("Błąd podczas pobierania przepisów:", error);
       dispatch(fetchRecipesFailure(error.message));
     }
   };
 };
-;
-
 
 // Dodawanie nowego przepisu
 export const addRecipe = (newRecipe) => (dispatch, getState) => {
@@ -130,9 +160,20 @@ export const toggleFavorite = (id) => (dispatch, getState) => {
     ? state.recipes.favorites.filter((favoriteId) => favoriteId !== id)
     : [...state.recipes.favorites, id];
 
+  // Zaktualizowanie stanu ulubionych przepisów w Redux
   dispatch({
     type: TOGGLE_FAVORITE,
     payload: updatedFavorites,
+  });
+
+  // Zaktualizowanie 'isFavorite' w przepisach
+  const updatedRecipes = state.recipes.recipes.map((recipe) =>
+    recipe.id === id ? { ...recipe, isFavorite: !recipe.isFavorite } : recipe
+  );
+
+  dispatch({
+    type: FETCH_RECIPES_SUCCESS,
+    payload: updatedRecipes,
   });
 };
 

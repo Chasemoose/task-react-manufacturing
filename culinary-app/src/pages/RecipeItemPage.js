@@ -11,7 +11,7 @@ const RecipeItemPage = () => {
   const recipe = recipes.find((r) => r.id === parseInt(id));
 
   const isFavorite = useSelector((state) =>
-    state.recipes.favorites.some((fav) => fav.id === recipe?.id)
+    state.recipes.favorites.includes(recipe?.id)
   );
 
   const handleToggleFavorite = () => {
@@ -28,12 +28,12 @@ const RecipeItemPage = () => {
     <div className="recipe-item-page-container">
       <div className="recipe-item-page-overlay"></div>
       <div className="recipe-item-content">
-        <h2 className="recipe-item-page-title">{recipe.name}</h2>
+        <h2 className="recipe-item-page-title">{recipe.title || "Brak tytułu"}</h2>
         <p className="recipe-item-page-ingredients">
-          <strong>Składniki:</strong> {recipe.ingredients.join(", ")}
+          <strong>Składniki:</strong> {recipe.ingredients?.join(", ") || "Brak składników"}
         </p>
         <p className="recipe-item-page-instructions">
-          <strong>Instrukcje:</strong> {recipe.instructions}
+          <strong>Instrukcje:</strong> {recipe.instructions || "Brak instrukcji"}
         </p>
         <button
           className={`recipe-item-page-favorite-button ${

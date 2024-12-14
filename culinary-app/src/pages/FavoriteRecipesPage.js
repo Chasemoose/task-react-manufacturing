@@ -4,7 +4,9 @@ import RecipeList from "../components/RecipeList";
 import '../styles/FavoriteRecipesPage.css';
 
 const FavoriteRecipesPage = () => {
-  const favoriteRecipes = useSelector((state) => state.recipes.favorites);
+  const favoriteRecipes = useSelector((state) =>
+    state.recipes.recipes.filter(recipe => recipe.isFavorite)
+  );
 
   return (
     <div className="favorite-recipes-container">
