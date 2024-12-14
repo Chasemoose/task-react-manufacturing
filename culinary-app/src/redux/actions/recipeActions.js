@@ -187,3 +187,13 @@ export const removeRecipe = (id) => (dispatch, getState) => {
     payload: updatedRecipes,
   });
 };
+
+// Usuwanie przepisu z MyRecipes
+export const removeMyRecipe = (id) => {
+  return {
+    type: "REMOVE_MY_RECIPE",
+    payload: id,
+  };
+};
+
+

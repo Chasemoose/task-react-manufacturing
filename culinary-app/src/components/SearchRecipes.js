@@ -15,7 +15,7 @@ const SearchRecipes = () => {
   const dispatch = useDispatch();
 
   const handleSearch = () => {
-    // Wywołanie wyszukiwania, gdy podano tytuł lub składniki
+    
     if (!titleSearch.trim() && !ingredientsSearch.trim()) {
       alert("Proszę podać tytuł przepisu lub składniki.");
       return;

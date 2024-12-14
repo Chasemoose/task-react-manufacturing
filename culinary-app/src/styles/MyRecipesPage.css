@@ -1,0 +1,61 @@
+.my-recipes-page-container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../images/img_21.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.my-recipes-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.my-recipes-content {
+    position: relative;
+    z-index: 2;
+    /* background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); */
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.my-recipes-header {
+    margin-top: 150px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.my-recipes-empty-message {
+    font-size: 18px;
+    color: #666;
+}
+
+.my-recipes-page-title {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}

@@ -52,14 +52,16 @@ const initialState = {
 		};
   
 	  case "TOGGLE_FAVORITE":
-		// Zmiana stanu ulubionych przepisów
+		
 		return {
-		  ...state,
-		  favorites: action.payload, // zaktualizowana lista ulubionych
-		  recipes: state.recipes.map((recipe) =>
-			recipe.id === action.payload.id ? { ...recipe, isFavorite: !recipe.isFavorite } : recipe
-		  ), // zaktualizowany stan isFavorite
-		};
+			...state,
+			favorites: action.payload,
+			recipes: state.recipes.map(recipe =>
+				recipe.id === action.payload.id
+					? { ...recipe, isFavorite: !recipe.isFavorite }
+					: recipe
+			),
+		}
   
 	  case "UPDATE_RECIPE":
 		return {
@@ -68,6 +70,13 @@ const initialState = {
 			recipe.id === action.payload.id ? { ...recipe, ...action.payload } : recipe
 		  ),
 		};
+
+		case "REMOVE_MY_RECIPE":
+  		return {
+   			...state,
+    		recipes: state.recipes.filter((recipe) => recipe.id !== action.payload),
+  		};
+
   
 	  default:
 		return state;

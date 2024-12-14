@@ -1,23 +1,16 @@
 import React from "react";
-// import { useDispatch } from "react-redux";
-// import { fetchRecipes } from "./redux/actions/recipeActions";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
 import SearchRecipesPage from "./pages/SearchRecipesPage";
-import RecipeItemPage from "./pages/RecipeItemPage"; 
+import RecipeItemPage from "./pages/RecipeItemPage";
 import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
-import ShoppingListPage from "./pages/ShoppingListPage"; 
+import ShoppingListPage from "./pages/ShoppingListPage";
+import MyRecipesPage from "./pages/MyRecipesPage";
 import "./styles/App.css";
 
 function App() {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchRecipes()); 
-  // }, [dispatch]);
-
   return (
     <Router>
       <ErrorBoundary>
@@ -38,6 +31,9 @@ function App() {
             <li>
               <Link to="/shopping-list">Lista Zakupów</Link>
             </li>
+            <li>
+              <Link to="/my-recipes">Moje przepisy</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -47,6 +43,7 @@ function App() {
           <Route path="/recipe/:id" element={<RecipeItemPage />} />
           <Route path="/favorites" element={<FavoriteRecipesPage />} />
           <Route path="/shopping-list" element={<ShoppingListPage />} />
+          <Route path="/my-recipes" element={<MyRecipesPage />} />
         </Routes>
       </ErrorBoundary>
     </Router>
