@@ -8,7 +8,6 @@ const RecipeItem = ({ recipe }) => {
   const [isEditing, setIsEditing] = useState(false);
   const dispatch = useDispatch();
 
-
   const handleAddToShoppingList = () => {
     dispatch(addToShoppingList(recipe.ingredients));
   };
@@ -49,7 +48,6 @@ const RecipeItem = ({ recipe }) => {
           >
             Usuń
           </button>
-          
           <button
             className="recipe-item-button add-to-shopping-list"
             onClick={handleAddToShoppingList}

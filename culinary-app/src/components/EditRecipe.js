@@ -1,56 +1,71 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { updateRecipe } from "../redux/actions/recipeActions";
+import { useDispatch, useSelector } from "react-redux";
+import { updateRecipe } from "../redux/actions/recipeActions"; // Poprawny import
+import { useNavigate, useParams } from "react-router-dom";
 
-const EditRecipe = ({ recipe, onClose }) => {
-  const [name, setName] = useState(recipe.name);
-  const [ingredients, setIngredients] = useState(recipe.ingredients.join(", "));
-  const [instructions, setInstructions] = useState(recipe.instructions);
+const EditRecipe = () => {
+  const { id } = useParams();
+  const recipes = useSelector((state) => state.recipes.recipes);
+  const recipeToEdit = recipes.find((recipe) => recipe.id === parseInt(id));
+  const [recipeName, setRecipeName] = useState(recipeToEdit?.name || "");
+  const [ingredients, setIngredients] = useState(
+    recipeToEdit?.ingredients.join(", ") || ""
+  );
+  const [instructions, setInstructions] = useState(recipeToEdit?.instructions || "");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSave = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     const updatedRecipe = {
-      ...recipe,
-      name,
-      ingredients: ingredients.split(",").map(ing => ing.trim()),
+      ...recipeToEdit,
+      name: recipeName,
+      ingredients: ingredients.split(",").map((ing) => ing.trim()),
       instructions,
     };
-    dispatch(updateRecipe(updatedRecipe));
-    onClose();
+
+    dispatch(updateRecipe(updatedRecipe)); // Wywołanie akcji aktualizacji przepisu
+    navigate("/");
   };
+
+  if (!recipeToEdit) {
+    return <p>Nie znaleziono przepisu do edycji.</p>;
+  }
 
   return (
     <div>
-      <h3>Edit Recipe</h3>
-      <label>
-        Name:
-        <input
-          type="text"
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Ingredients (comma separated):
-        <input
-          type="text"
-          value={ingredients}
-          onChange={e => setIngredients(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Instructions:
-        <textarea
-          value={instructions}
-          onChange={e => setInstructions(e.target.value)}
-        />
-      </label>
-      <br />
-      <button onClick={handleSave}>Save</button>
-      <button onClick={onClose}>Cancel</button>
+      <h2>Edytuj przepis</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Nazwa przepisu:
+          <input
+            type="text"
+            value={recipeName}
+            onChange={(e) => setRecipeName(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Składniki (oddzielone przecinkiem):
+          <input
+            type="text"
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Instrukcje:
+          <textarea
+            value={instructions}
+            onChange={(e) => setInstructions(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Zapisz zmiany</button>
+      </form>
     </div>
   );
 };

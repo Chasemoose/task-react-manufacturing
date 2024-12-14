@@ -1,57 +1,31 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { addSearchHistory } from "../redux/actions/recipeActions"; // Import akcji
+import { fetchRecipes } from "../redux/actions/recipeActions"; 
 import '../styles/SearchRecipes.css';
 
 const SearchRecipes = () => {
   const [titleSearch, setTitleSearch] = useState("");
   const [ingredientsSearch, setIngredientsSearch] = useState("");
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-  const recipes = useSelector((state) => state.recipes.recipes);
+  const { recipes, loading, error } = useSelector((state) => ({
+    recipes: state.recipes.recipes,
+    loading: state.recipes.loading,
+    error: state.recipes.error,
+  }));
+
   const dispatch = useDispatch(); 
 
   console.log("Wszystkie przepisy z Redux:", recipes);
 
   const handleSearch = () => {
-    const filtered = Array.isArray(recipes)
-      ? recipes.filter((recipe) => {
-          const titleMatches = titleSearch
-            ? recipe.name.toLowerCase().includes(titleSearch.toLowerCase())
-            : true;
+    const query = {
+      title: titleSearch,
+      ingredients: ingredientsSearch.split(",").map((ing) => ing.trim()).join(","),
+    };
 
-          const searchIngredients = ingredientsSearch
-            .split(",")
-            .map((ing) => ing.trim().toLowerCase());
+    dispatch(fetchRecipes(query)); 
 
-          const ingredientsMatches = searchIngredients.every((searchIng) =>
-            recipe.ingredients.some((ingredient) =>
-              ingredient.toLowerCase().includes(searchIng)
-            )
-          );
-
-          if (ingredientsSearch && titleSearch) {
-            return titleMatches && ingredientsMatches;
-          } else if (ingredientsSearch) {
-            return ingredientsMatches;
-          } else if (titleSearch) {
-            return titleMatches;
-          } else {
-            return true;
-          }
-        })
-      : [];
-
-    console.log("Przepisy po filtrowaniu:", filtered);
-    setFilteredRecipes(filtered);
-
-    
-    if (titleSearch || ingredientsSearch) {
-      dispatch(addSearchHistory({ titleSearch, ingredientsSearch }));
-    }
-
-    
     setTitleSearch("");
     setIngredientsSearch("");
   };
@@ -82,22 +56,26 @@ const SearchRecipes = () => {
         </label>
       </div>
       <button onClick={handleSearch} className="search-recipes-button">Wyszukaj</button>
+      
+      {loading && <p>Ładowanie przepisów...</p>}
+      {error && <p className="error-message">Błąd: {error}</p>}
+      
       <div className="search-recipes-results">
         <h3 className="search-recipes-results-header">Wyniki wyszukiwania:</h3>
         <ul className="search-recipes-results-list">
-          {filteredRecipes.length > 0 ? (
-            filteredRecipes.map((recipe) => (
+          {recipes.length > 0 ? (
+            recipes.map((recipe) => (
               <li key={recipe.id} className="search-recipes-results-item">
                 <Link to={`/recipe/${recipe.id}`} className="search-recipes-results-link">
-                  <h4 className="search-recipes-results-title">{recipe.name}</h4>
+                  <h4 className="search-recipes-results-title">{recipe.title}</h4>
                 </Link>
                 <p className="search-recipes-results-ingredients">
-                  Składniki: {recipe.ingredients.join(", ")}
+                  Składniki: {recipe.ingredients?.join(", ") || "Nieznane"}
                 </p>
               </li>
             ))
           ) : (
-            <p className="search-recipes-no-results">Brak wyników.</p>
+            !loading && <p className="search-recipes-no-results">Brak wyników.</p>
           )}
         </ul>
       </div>

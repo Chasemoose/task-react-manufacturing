@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setRecipes } from "./redux/actions/recipeActions";
+import { fetchRecipes } from "./redux/actions/recipeActions"; // Import poprawny
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
@@ -10,14 +10,12 @@ import ErrorBoundary from "./ErrorBoundary";
 import FavoriteRecipesPage from "./pages/FavoriteRecipesPage";
 import ShoppingListPage from "./pages/ShoppingListPage"; 
 import "./styles/App.css";
-import data from "./data/recipes.json";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setRecipes(data));
-    console.log("Załadowane dane z recipes.json:", data);
+    dispatch(fetchRecipes()); 
   }, [dispatch]);
 
   return (
