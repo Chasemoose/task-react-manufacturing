@@ -56,18 +56,18 @@ const RecipeItem = ({ recipe }) => {
           >
             {recipe.isFavorite ? "Nieulubiony" : "Ulubiony"}
           </button>
-          <button
+          {/* <button
             className="recipe-item-button edit"
             onClick={() => setIsEditing(true)}
           >
             Edytuj
-          </button>
-          <button
+          </button> */}
+          {/* <button
             className="recipe-item-button remove"
             onClick={() => dispatch(removeRecipe(recipe.id))}
           >
             Usuń
-          </button>
+          </button> */}
           <button
             className="recipe-item-button add-to-shopping-list"
             onClick={handleAddToShoppingList}

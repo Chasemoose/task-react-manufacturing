@@ -2,7 +2,7 @@ import React from "react";
 // import { useDispatch } from "react-redux";
 // import { fetchRecipes } from "./redux/actions/recipeActions";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import AddRecipePage from "./pages/AddRecipePage";
+// import AddRecipePage from "./pages/AddRecipePage";
 import HomePage from "./pages/HomePage";
 import SearchRecipesPage from "./pages/SearchRecipesPage";
 import RecipeItemPage from "./pages/RecipeItemPage"; 
@@ -26,9 +26,9 @@ function App() {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/add">Dodaj przepis</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/search">Wyszukaj przepis</Link>
             </li>
@@ -42,7 +42,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/add" element={<AddRecipePage />} />
+          {/* <Route path="/add" element={<AddRecipePage />} /> */}
           <Route path="/search" element={<SearchRecipesPage />} />
           <Route path="/recipe/:id" element={<RecipeItemPage />} />
           <Route path="/favorites" element={<FavoriteRecipesPage />} />
