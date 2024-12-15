@@ -30,10 +30,10 @@ const RecipeItemPage = () => {
       <div className="recipe-item-content">
         <h2 className="recipe-item-page-title">{recipe.title || "No title"}</h2>
         <p className="recipe-item-page-ingredients">
-          <strong>Składniki:</strong> {recipe.ingredients?.join(", ") || "No ingredients"}
+          <strong>Ingredients:</strong> {recipe.ingredients?.join(", ") || "No ingredients"}
         </p>
         <p className="recipe-item-page-instructions">
-          <strong>Instrukcje:</strong> {recipe.instructions || "No instructions"}
+          <strong>Instructions:</strong> {recipe.instructions || "No instructions"}
         </p>
         <button
           className={`recipe-item-page-favorite-button ${
