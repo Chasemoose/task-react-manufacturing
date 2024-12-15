@@ -66,14 +66,9 @@ export const fetchRecipes = (query) => {
       const encodedTitle = encodeURIComponent(query.title || "");
       const encodedIngredients = encodeURIComponent(query.ingredients || "");
 
-      const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-
-      if (!apiKey) {
-        throw new Error("Brak klucza API. Upewnij się, że jest ustawiony w pliku .env.");
-      }
-
+      
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?query=${encodedTitle}&includeIngredients=${encodedIngredients}&number=10&addRecipeInformation=true&apiKey=${apiKey}`
+        `/.netlify/functions/get-recipe-data?title=${encodedTitle}&ingredients=${encodedIngredients}`
       );
 
       if (!response.ok) {
@@ -81,24 +76,20 @@ export const fetchRecipes = (query) => {
       }
 
       const data = await response.json();
-      console.log("Dane zwrócone z API:", data);
+      console.log("Dane zwrócone z Netlify Function:", data);
 
-      if (!data.results || data.results.length === 0) {
+      if (!data || data.length === 0) {
         throw new Error("Brak wyników dla podanych kryteriów.");
       }
 
-      
-      const detailedRecipes = await Promise.all(
-        data.results.map((recipe) => fetchRecipeDetails(recipe.id, apiKey))
-      );
-
-      dispatch(fetchRecipesSuccess(detailedRecipes));
+      dispatch(fetchRecipesSuccess(data));
     } catch (error) {
       console.error("Błąd podczas pobierania przepisów:", error);
       dispatch(fetchRecipesFailure(error.message));
     }
   };
 };
+
 
 // Dodawanie nowego przepisu
 export const addRecipe = (newRecipe) => (dispatch, getState) => {
