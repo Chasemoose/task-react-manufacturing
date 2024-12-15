@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateRecipe } from "../redux/actions/recipeActions"; // Poprawny import
+import { updateRecipe } from "../redux/actions/recipeActions"; 
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditRecipe = () => {
@@ -26,7 +26,7 @@ const EditRecipe = () => {
       instructions,
     };
 
-    dispatch(updateRecipe(updatedRecipe)); // Wywołanie akcji aktualizacji przepisu
+    dispatch(updateRecipe(updatedRecipe));
     navigate("/");
   };
 

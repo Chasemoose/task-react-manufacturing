@@ -13,7 +13,6 @@ html, body {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  /* font-family: Arial, sans-serif; */
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
@@ -37,7 +36,6 @@ nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  /* text-transform: uppercase; */
 }
 
 .app-container {
@@ -45,11 +43,6 @@ nav ul li a {
   flex-direction: column;
   min-height: 100vh;
 }
-
-/* .main-content {
-  flex: 1;
-  padding: 20px;
-} */
 
 .app-footer {
   background-color: #3c525e;

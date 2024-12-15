@@ -45,7 +45,7 @@ const fetchRecipeDetails = async (id, apiKey) => {
       ? data.extendedIngredients.map((ingredient) => ingredient.original)
       : ["Brak składników"],
     instructions: data.instructions || "Brak instrukcji",
-    isFavorite: false, // Nowa właściwość isFavorite dla każdego przepisu
+    isFavorite: false, 
   };
 };
 
@@ -87,7 +87,7 @@ export const fetchRecipes = (query) => {
         throw new Error("Brak wyników dla podanych kryteriów.");
       }
 
-      // Pobierz szczegóły każdego przepisu
+      
       const detailedRecipes = await Promise.all(
         data.results.map((recipe) => fetchRecipeDetails(recipe.id, apiKey))
       );
@@ -161,13 +161,13 @@ export const toggleFavorite = (id) => (dispatch, getState) => {
     ? state.recipes.favorites.filter((favoriteId) => favoriteId !== id)
     : [...state.recipes.favorites, id];
 
-  // Zaktualizowanie stanu ulubionych przepisów w Redux
+ 
   dispatch({
     type: TOGGLE_FAVORITE,
     payload: updatedFavorites,
   });
 
-  // Zaktualizowanie 'isFavorite' w przepisach
+  
   const updatedRecipes = state.recipes.recipes.map((recipe) =>
     recipe.id === id ? { ...recipe, isFavorite: !recipe.isFavorite } : recipe
   );

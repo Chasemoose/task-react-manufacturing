@@ -54,15 +54,14 @@ const initialState = {
 			}
 
 		case "TOGGLE_FAVORITE":
-			// Zmiana stanu ulubionych przepisów
 			return {
 				...state,
-				favorites: action.payload, // zaktualizowana lista ulubionych
+				favorites: action.payload, 
 				recipes: state.recipes.map(recipe =>
 					recipe.id === action.payload.id
 						? { ...recipe, isFavorite: !recipe.isFavorite }
 						: recipe
-				), // zaktualizowany stan isFavorite
+				), 
 			}
 
 		case "UPDATE_RECIPE":
