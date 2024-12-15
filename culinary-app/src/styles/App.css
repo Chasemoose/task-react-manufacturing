@@ -39,3 +39,36 @@ nav ul li a {
   font-weight: bold;
   /* text-transform: uppercase; */
 }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* .main-content {
+  flex: 1;
+  padding: 20px;
+} */
+
+.app-footer {
+  background-color: #3c525e;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+.app-footer a {
+  color: #a8c5e6;
+  text-decoration: none;
+}
+.app-footer p {
+  color: #eef1f3;
+  
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
