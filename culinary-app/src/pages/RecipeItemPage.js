@@ -21,19 +21,19 @@ const RecipeItemPage = () => {
   };
 
   if (!recipe) {
-    return <p className="recipe-item-page-not-found">Przepis nie został znaleziony.</p>;
+    return <p className="recipe-item-page-not-found">Recipe not found.</p>;
   }
 
   return (
     <div className="recipe-item-page-container">
       <div className="recipe-item-page-overlay"></div>
       <div className="recipe-item-content">
-        <h2 className="recipe-item-page-title">{recipe.title || "Brak tytułu"}</h2>
+        <h2 className="recipe-item-page-title">{recipe.title || "No title"}</h2>
         <p className="recipe-item-page-ingredients">
-          <strong>Składniki:</strong> {recipe.ingredients?.join(", ") || "Brak składników"}
+          <strong>Składniki:</strong> {recipe.ingredients?.join(", ") || "No ingredients"}
         </p>
         <p className="recipe-item-page-instructions">
-          <strong>Instrukcje:</strong> {recipe.instructions || "Brak instrukcji"}
+          <strong>Instrukcje:</strong> {recipe.instructions || "No instructions"}
         </p>
         <button
           className={`recipe-item-page-favorite-button ${
@@ -41,7 +41,7 @@ const RecipeItemPage = () => {
           }`}
           onClick={handleToggleFavorite}
         >
-          {isFavorite ? "Usuń z ulubionych" : "Dodaj do ulubionych"}
+          {isFavorite ? "Remove from favorites" : "Add to favorites"}
         </button>
       </div>
     </div>

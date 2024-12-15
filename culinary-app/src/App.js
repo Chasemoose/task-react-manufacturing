@@ -30,13 +30,13 @@ function App() {
               <Link to="/add">Dodaj przepis</Link>
             </li> */}
             <li>
-              <Link to="/search">Wyszukaj przepis</Link>
+              <Link to="/search">Recipe search</Link>
             </li>
             <li>
-              <Link to="/favorites">Ulubione Przepisy</Link>
+              <Link to="/favorites">Favorite recipes</Link>
             </li>
             <li>
-              <Link to="/shopping-list">Lista Zakupów</Link>
+              <Link to="/shopping-list">Shopping list</Link>
             </li>
           </ul>
         </nav>

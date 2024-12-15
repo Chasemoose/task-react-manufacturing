@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggleFavorite, removeRecipe, addToShoppingList } from "../redux/actions/recipeActions"; 
+import { toggleFavorite, addToShoppingList } from "../redux/actions/recipeActions"; 
 import EditRecipe from "./EditRecipe";
 import '../styles/RecipeItem.css'; 
 
@@ -12,12 +12,12 @@ const RecipeItem = ({ recipe }) => {
     if (recipe.ingredients?.length) {
       dispatch(addToShoppingList(recipe.ingredients));
     } else {
-      alert("Brak składników do dodania.");
+      alert("No ingredients to add.");
     }
   };
 
   const parseInstructions = (instructions) => {
-    if (!instructions) return ["Brak instrukcji"];
+    if (!instructions) return ["No instructions"];
     return instructions.split("\n").filter(line => line.trim() !== "").map((step, index) => `Krok ${index + 1}: ${step.trim()}`);
   };
 
@@ -29,9 +29,9 @@ const RecipeItem = ({ recipe }) => {
         <EditRecipe recipe={recipe} onClose={() => setIsEditing(false)} />
       ) : (
         <>
-          <h3 className="recipe-item-title">{recipe.title || "Brak tytułu"}</h3>
+          <h3 className="recipe-item-title">{recipe.title || "No title"}</h3>
           <p className="recipe-item-ingredients-header">
-            <strong>Składniki:</strong>
+            <strong>Ingredients:</strong>
           </p>
           <ul className="recipe-item-ingredients-list">
             {recipe.ingredients?.length ? (
@@ -39,11 +39,11 @@ const RecipeItem = ({ recipe }) => {
                 <li key={index} className="recipe-item-ingredient">{ingredient}</li>
               ))
             ) : (
-              <li className="recipe-item-ingredient">Brak składników</li>
+              <li className="recipe-item-ingredient">No idgredients</li>
             )}
           </ul>
           <p className="recipe-item-instructions">
-            <strong>Sposób przygotowania:</strong>
+            <strong>Preparation method:</strong>
           </p>
           <ol className="recipe-item-instructions-list">
             {parsedInstructions.map((step, index) => (
@@ -54,25 +54,13 @@ const RecipeItem = ({ recipe }) => {
             className={`recipe-item-button ${recipe.isFavorite ? "remove" : "add"}`}
             onClick={() => dispatch(toggleFavorite(recipe.id))}
           >
-            {recipe.isFavorite ? "Nieulubiony" : "Ulubiony"}
+            {recipe.isFavorite ? "Unfavorite" : "Favorite"}
           </button>
-          {/* <button
-            className="recipe-item-button edit"
-            onClick={() => setIsEditing(true)}
-          >
-            Edytuj
-          </button> */}
-          {/* <button
-            className="recipe-item-button remove"
-            onClick={() => dispatch(removeRecipe(recipe.id))}
-          >
-            Usuń
-          </button> */}
           <button
             className="recipe-item-button add-to-shopping-list"
             onClick={handleAddToShoppingList}
           >
-            Dodaj składniki do listy zakupów
+            Add ingredients to your shopping list
           </button>
         </>
       )}

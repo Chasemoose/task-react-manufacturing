@@ -7,7 +7,7 @@ const SearchRecipesPage = () => {
     <div className="search-recipes-page-container">
       <div className="search-recipes-page-overlay"></div>
       <div className="search-recipes-content">
-      <h2 className="search-recipe-page-title">Wyszukaj przepis</h2>
+      <h2 className="search-recipe-page-title">Search for a recipe</h2>
         <SearchRecipes />
       </div>
     </div>

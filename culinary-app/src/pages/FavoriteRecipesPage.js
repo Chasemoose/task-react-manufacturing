@@ -11,13 +11,13 @@ const FavoriteRecipesPage = () => {
   return (
     <div className="favorite-recipes-container">
       <div className="favorite-recipes-overlay"></div>
-      <h2 className="favorite-recipe-page-title">Ulubione przepisy</h2>
+      <h2 className="favorite-recipe-page-title">Favorite recipes</h2>
       <div className="favorite-recipes-content">
-        <h2 className="favorite-recipes-header">Lista ulubionych przepisów</h2>
+        <h2 className="favorite-recipes-header">List of favorite recipes</h2>
         {favoriteRecipes.length > 0 ? (
           <RecipeList recipes={favoriteRecipes} />
         ) : (
-          <p className="favorite-recipes-empty-message">Nie masz jeszcze ulubionych przepisów.</p>
+          <p className="favorite-recipes-empty-message">You don't have any favorite recipes yet.</p>
         )}
       </div>
     </div>

@@ -15,9 +15,9 @@ const SearchRecipes = () => {
   const dispatch = useDispatch();
 
   const handleSearch = () => {
-    // Wywołanie wyszukiwania, gdy podano tytuł lub składniki
+    
     if (!titleSearch.trim() && !ingredientsSearch.trim()) {
-      alert("Proszę podać tytuł przepisu lub składniki.");
+      alert("Please provide the recipe title or ingredients.");
       return;
     }
 
@@ -32,7 +32,7 @@ const SearchRecipes = () => {
         setIngredientsSearch("");
       })
       .catch((error) => {
-        console.error("Błąd podczas wyszukiwania przepisów:", error);
+        console.error("Error while searching for recipes:", error);
       });
   };
 
@@ -40,47 +40,47 @@ const SearchRecipes = () => {
     <div className="search-recipes-container">
       <div className="search-recipes-inputs">
         <label className="search-recipes-label">
-          Wyszukaj po tytule:
+        Search by title:
           <input
             type="text"
             value={titleSearch}
             onChange={(e) => setTitleSearch(e.target.value)}
-            placeholder="Wpisz tytuł przepisu"
+            placeholder="Enter the title of the recipe"
             className="search-recipes-input"
           />
         </label>
         <label className="search-recipes-label">
-          Wyszukaj po składnikach (oddzielone przecinkiem):
+        Search by ingredients (comma separated):
           <input
             type="text"
             value={ingredientsSearch}
             onChange={(e) => setIngredientsSearch(e.target.value)}
-            placeholder="Np. pomidory, cebula"
+            placeholder="E.g. tomatoes, onions"
             className="search-recipes-input"
           />
         </label>
       </div>
-      <button onClick={handleSearch} className="search-recipes-button">Wyszukaj</button>
+      <button onClick={handleSearch} className="search-recipes-button">Search</button>
 
       {loading && <p>Ładowanie przepisów...</p>}
-      {error && <p className="error-message">Błąd: {error}</p>}
+      {error && <p className="error-message">Error: {error}</p>}
 
       <div className="search-recipes-results">
-        <h3 className="search-recipes-results-header">Wyniki wyszukiwania:</h3>
+        <h3 className="search-recipes-results-header">Search results:</h3>
         <ul className="search-recipes-results-list">
           {recipes.length > 0 ? (
             recipes.map((recipe) => (
               <li key={recipe.id} className="search-recipes-results-item">
                 <Link to={`/recipe/${recipe.id}`} className="search-recipes-results-link">
-                  <h4 className="search-recipes-results-title">{recipe.title || "Brak tytułu"}</h4>
+                  <h4 className="search-recipes-results-title">{recipe.title || "No title"}</h4>
                 </Link>
                 <p className="search-recipes-results-ingredients">
-                  Składniki: {recipe.ingredients?.join(", ") || "Nieznane"}
+                Ingredients: {recipe.ingredients?.join(", ") || "Unknown"}
                 </p>
               </li>
             ))
           ) : (
-            !loading && <p className="search-recipes-no-results">Brak wyników.</p>
+            !loading && <p className="search-recipes-no-results">No results.</p>
           )}
         </ul>
       </div>

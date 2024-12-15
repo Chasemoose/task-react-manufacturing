@@ -16,16 +16,16 @@ const ShoppingList = () => {
   };
 
   const handleClearList = () => {
-    if (window.confirm("Czy na pewno chcesz wyczyścić listę zakupów?")) {
+    if (window.confirm("Are you sure you want to clear your shopping list??")) {
       dispatch(clearShoppingList());
     }
   };
 
   return (
     <div className="shopping-list-container">
-      <h2 className="shopping-list-title">Lista zakupów</h2>
+      <h2 className="shopping-list-title">Shopping list</h2>
       {shoppingList.length === 0 ? (
-        <p className="shopping-list-empty">Twoja lista zakupów jest pusta!</p>
+        <p className="shopping-list-empty">Your shopping list is empty!</p>
       ) : (
         <ul className="shopping-list">
           {shoppingList.map((item, index) => (
@@ -35,7 +35,7 @@ const ShoppingList = () => {
                 className="shopping-list-remove"
                 onClick={() => handleRemoveItem(index)}
               >
-                Usuń
+                Delete
               </button>
             </li>
           ))}
@@ -43,7 +43,7 @@ const ShoppingList = () => {
       )}
       {shoppingList.length > 0 && (
         <button className="shopping-list-clear" onClick={handleClearList}>
-          Wyczyść listę
+          Clear the list
         </button>
       )}
     </div>

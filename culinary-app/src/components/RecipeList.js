@@ -4,7 +4,7 @@ import '../styles/RecipeList.css';
 
 const RecipeList = ({ recipes }) => {  
   if (recipes.length === 0) {
-    return <p className="recipe-list-empty-message">Brak dostępnych przepisów. Dodaj jakiś!</p>;
+    return <p className="recipe-list-empty-message">No recipes available. Add some!</p>;
   }
 
   return (

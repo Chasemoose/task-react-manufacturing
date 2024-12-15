@@ -13,7 +13,7 @@ const SearchHistory = () => {
 
     return (
         <div className="search-history-container">
-            <h3 className="search-history-title">Historia wyszukiwań</h3>
+            <h3 className="search-history-title">Search history</h3>
             {searchHistory.length > 0 ? (
                 <ul className="search-history-list">
                     {searchHistory.map((query, index) => (
@@ -23,10 +23,10 @@ const SearchHistory = () => {
                     ))}
                 </ul>
             ) : (
-                <p className="search-history-empty">Brak historii wyszukiwań.</p>
+                <p className="search-history-empty">No search history.</p>
             )}
             <button className="search-history-clear" onClick={handleClearHistory}>
-                Wyczyść historię
+            Clear history
             </button>
         </div>
     );
