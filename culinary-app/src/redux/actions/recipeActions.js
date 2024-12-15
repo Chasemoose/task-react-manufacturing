@@ -139,6 +139,7 @@ export const removeItemFromShoppingList = (index) => (dispatch, getState) => {
   const state = getState();
   const updatedList = state.recipes.shoppingList.filter((_, i) => i !== index);
 
+  console.log("Updated list after removal:", updatedList);
   dispatch({
     type: REMOVE_FROM_SHOPPING_LIST,
     payload: updatedList,

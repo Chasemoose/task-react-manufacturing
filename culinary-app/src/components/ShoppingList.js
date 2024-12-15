@@ -12,6 +12,7 @@ const ShoppingList = () => {
   const shoppingList = useSelector((state) => state.recipes.shoppingList);
 
     const handleRemoveItem = (index) => {
+      console.log("Removing item at index:", index);
     dispatch(removeItemFromShoppingList(index));
   };
 
