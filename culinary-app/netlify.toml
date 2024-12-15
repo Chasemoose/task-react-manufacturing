@@ -1,8 +1,8 @@
 [build]
-  base = "culinary-app"  
+  base = "."
   command = "npm run build"
-  publish = "culinary-app/build"  
-  functions = "culinary-app/netlify/functions"
+  publish = "build"  
+  functions = "netlify/functions"
 
 [functions]
   directory = "netlify/functions"
