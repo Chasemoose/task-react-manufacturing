@@ -26,6 +26,7 @@ const fetchRecipesFailure = (error) => ({
 });
 
 // Funkcja pobierająca szczegóły przepisu
+// eslint-disable-next-line no-unused-vars
 const fetchRecipeDetails = async (id, apiKey) => {
   const response = await fetch(
     `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
